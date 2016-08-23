@@ -226,10 +226,10 @@ void Server::start( void ) {
     #define CALLBACK( name ) ( bind( &Server::callback_ ## name, this, placeholders::_1, placeholders::_2 ) )
     http_server_.resource[ "^/devices$" ][ "GET" ] = CALLBACK( devices );
     http_server_.resource[ "^/devices$" ][ "HEAD" ] = CALLBACK( devices );
-    http_server_.resource[ "^/devices\\/([a-z0-9]+)$" ][ "GET" ] = CALLBACK( device );
-    http_server_.resource[ "^/devices\\/([a-z0-9]+)$" ][ "HEAD" ] = CALLBACK( device );
-    http_server_.resource[ "^/properties\\/([a-z0-9]+)$" ][ "GET" ] = CALLBACK( properties );
-    http_server_.resource[ "^/properties\\/([a-z0-9]+)$" ][ "HEAD" ] = CALLBACK( properties );
+    http_server_.resource[ "^/devices\\/([a-z0-9\\-_]+)$" ][ "GET" ] = CALLBACK( device );
+    http_server_.resource[ "^/devices\\/([a-z0-9\\-_]+)$" ][ "HEAD" ] = CALLBACK( device );
+    http_server_.resource[ "^/properties\\/([a-z0-9\\-_]+)$" ][ "GET" ] = CALLBACK( properties );
+    http_server_.resource[ "^/properties\\/([a-z0-9\\-_]+)$" ][ "HEAD" ] = CALLBACK( properties );
     http_server_.resource[ "^/properties\\/([a-z0-9\\-_]+)\\/([a-z0-9\\-_]+)$" ][ "GET" ] = CALLBACK( property );
     http_server_.resource[ "^/properties\\/([a-z0-9\\-_]+)\\/([a-z0-9\\-_]+)$" ][ "HEAD" ] = CALLBACK( property );
     http_server_.resource[ "^/properties\\/([a-z0-9\\-_]+)\\/([a-z0-9\\-_]+)$" ][ "PUT" ] = CALLBACK( property );
