@@ -3,3 +3,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wextra")
 
 add_subdirectory(test_device)
 add_subdirectory(rotating_turntable)
+add_subdirectory(conveyor_belt)

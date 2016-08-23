@@ -38,7 +38,6 @@ int main() {
     Server propertyServer( "RTT-PS", 8080 );
     propertyServer.add_device( rtt );
     propertyServer.start();
-    propertyServer.join();
     wiringPiSetupPhys () ;
        pinMode (COIL_1A, OUTPUT);
        pinMode (COIL_1B, OUTPUT);
