@@ -22,7 +22,7 @@ int main() {
 
     auto cb = make_shared<Device>( "conveyor_belt", "Conveyor Belt", "Conveyor Belt" );
     auto target_speed = make_shared<Property>( "target_speed", "Target speed", "percent", false, 0l, -100l, 100l );
-    auto current_speed = make_shared<Property>( "current_speed", "Current speed", "percent", true, 0l, 100l, 100l );
+    auto current_speed = make_shared<Property>( "current_speed", "Current speed", "percent", true, 0l, -100l, 100l );
     cb->add_property( target_speed );
     cb->add_property( current_speed );
     cb->register_listener( target_speed->get_id(),
