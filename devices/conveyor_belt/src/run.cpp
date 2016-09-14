@@ -29,6 +29,7 @@ int main() {
     [ = ]( __attribute__ ( (unused) ) shared_ptr<Device> device,
            __attribute__ ( (unused) ) shared_ptr<Property> property ) {
         long speed = property->as_long();
+        current_speed->set_long(speed);
         long pwm = labs(speed);
         if(speed == 0) {
             softPwmWrite (COIL_A, 0) ;
